@@ -1,5 +1,6 @@
 package com.iohgame.services.nba.export;
 
+import com.iohgame.framework.connect.base.ConnectBase;
 import com.iohgame.framework.utility.ServiceFactory;
 import com.iohgame.framework.utility.parameters.property.Action;
 import com.iohgame.framework.utility.parameters.property.OptionElement;
@@ -13,34 +14,24 @@ public class NbaRakutenBatchFactory extends ServiceFactory
     }
 
     @Override
-    public void execute(OptionElement page)
+    public Action getAction(OptionElement page)
     {
         Action act = null;
-        switch ((BatchOption) page)
+        ConnectBase connect = null;
+        switch ((NbaRakutenBatchOption) page)
         {
             case NBA_RAKUTEN_WEEKLY_REPORT:
-                act = new NbaRakutenWeeklyReportExportAction(new NbaRakutenConnect());
+                connect = new NbaRakutenConnect();
+                act = new NbaRakutenWeeklyReportExportAction((NbaRakutenConnect) connect);
                 break;
             default:
                 LOG.error("Batch option is nou found by " + page);
                 break;
         }
-        if (act != null)
-        {
-            if (!act.doMainValidate())
-            {
-                LOG.error("Validate is not passed");
-                return;
-            }
-            if (!act.doMainExecute())
-            {
-                LOG.error("Execute is not passed");
-                return;
-            }
-        }
+        return act;
     }
 
-    public enum BatchOption implements OptionElement
+    public enum NbaRakutenBatchOption implements OptionElement
     {
         NBA_RAKUTEN_WEEKLY_REPORT;
 
