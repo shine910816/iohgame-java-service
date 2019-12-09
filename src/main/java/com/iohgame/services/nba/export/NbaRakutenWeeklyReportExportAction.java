@@ -3,9 +3,9 @@ package com.iohgame.services.nba.export;
 import com.iohgame.framework.utility.BatchAction;
 import com.iohgame.framework.utility.Utility;
 import com.iohgame.framework.utility.parameters.constant.ConstDatetime;
+import com.iohgame.service.nba.export.NbaRakutenConnect;
 import com.iohgame.service.property.jira.export.parameters.JiraIssueColumns;
 import com.iohgame.service.property.jira.export.property.JiraTicketsExport;
-import com.iohgame.service.property.jira.export.property.NbaRakutenConnect;
 
 public class NbaRakutenWeeklyReportExportAction extends BatchAction<NbaRakutenConnect>
 {

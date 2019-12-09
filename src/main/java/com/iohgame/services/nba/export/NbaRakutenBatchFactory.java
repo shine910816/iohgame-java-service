@@ -4,7 +4,7 @@ import com.iohgame.framework.connect.base.ConnectBase;
 import com.iohgame.framework.utility.ServiceFactory;
 import com.iohgame.framework.utility.parameters.property.Action;
 import com.iohgame.framework.utility.parameters.property.OptionElement;
-import com.iohgame.service.property.jira.export.property.NbaRakutenConnect;
+import com.iohgame.service.nba.export.NbaRakutenConnect;
 
 public class NbaRakutenBatchFactory extends ServiceFactory
 {
