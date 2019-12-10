@@ -1,12 +1,13 @@
 package com.iohgame;
 
-import com.iohgame.services.nba.export.NbaRakutenBatchFactory;
-import com.iohgame.services.nba.export.NbaRakutenBatchFactory.NbaRakutenBatchOption;
+import com.iohgame.services.nba.NbaFactory;
+import com.iohgame.services.nba.parameters.NbaBatchOption;
 
 public class App 
 {
     public static void main( String[] args )
     {
-        NbaRakutenBatchFactory.getInstance().getAction(NbaRakutenBatchOption.NBA_RAKUTEN_WEEKLY_REPORT).doMainExecute();
+        //NbaFactory.getInstance().getAction(NbaBatchOption.NBA_RAKUTEN_WEEKLY_REPORT).doMainExecute();
+        NbaFactory.getInstance().getAction(NbaBatchOption.NBA_SYNCHRONIZE).doMainExecute();
     }
 }

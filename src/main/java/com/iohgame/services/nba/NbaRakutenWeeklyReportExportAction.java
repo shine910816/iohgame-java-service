@@ -1,4 +1,4 @@
-package com.iohgame.services.nba.export;
+package com.iohgame.services.nba;
 
 import com.iohgame.framework.utility.BatchAction;
 import com.iohgame.framework.utility.Utility;
