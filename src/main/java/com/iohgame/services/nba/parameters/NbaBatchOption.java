@@ -4,7 +4,7 @@ import com.iohgame.framework.utility.parameters.property.OptionElement;
 
 public enum NbaBatchOption implements OptionElement
 {
-    NBA_RAKUTEN_WEEKLY_REPORT,
+    NBA_REPORT,
 
     NBA_SYNCHRONIZE;
 

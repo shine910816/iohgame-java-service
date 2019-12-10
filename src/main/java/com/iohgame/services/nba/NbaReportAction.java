@@ -7,9 +7,9 @@ import com.iohgame.service.nba.export.NbaRakutenConnect;
 import com.iohgame.service.property.jira.export.parameters.JiraIssueColumns;
 import com.iohgame.service.property.jira.export.property.JiraTicketsExport;
 
-public class NbaRakutenWeeklyReportExportAction extends BatchAction<NbaRakutenConnect>
+public class NbaReportAction extends BatchAction<NbaRakutenConnect>
 {
-    protected NbaRakutenWeeklyReportExportAction(NbaRakutenConnect connect)
+    protected NbaReportAction(NbaRakutenConnect connect)
     {
         super(connect);
     }

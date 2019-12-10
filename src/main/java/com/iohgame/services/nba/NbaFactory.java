@@ -22,16 +22,16 @@ public class NbaFactory extends ServiceFactory
         ConnectBase connect = null;
         switch ((NbaBatchOption) page)
         {
-            case NBA_RAKUTEN_WEEKLY_REPORT:
+            case NBA_REPORT:
                 connect = new NbaRakutenConnect();
-                act = new NbaRakutenWeeklyReportExportAction((NbaRakutenConnect) connect);
+                act = new NbaReportAction((NbaRakutenConnect) connect);
                 break;
             case NBA_SYNCHRONIZE:
                 connect = new NbaImpl();
                 act = new NbaSynchAction((NbaImpl) connect);
                 break;
             default:
-                LOG.error("Batch option is nou found by " + page);
+                LOG.error("Batch option is not found by " + page);
                 break;
         }
         return act;

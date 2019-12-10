@@ -7,7 +7,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        //NbaFactory.getInstance().getAction(NbaBatchOption.NBA_RAKUTEN_WEEKLY_REPORT).doMainExecute();
+        //NbaFactory.getInstance().getAction(NbaBatchOption.NBA_REPORT).doMainExecute();
         NbaFactory.getInstance().getAction(NbaBatchOption.NBA_SYNCHRONIZE).doMainExecute();
     }
 }
