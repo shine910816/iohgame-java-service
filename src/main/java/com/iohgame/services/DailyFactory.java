@@ -1,18 +1,20 @@
-package com.iohgame.services.nba;
+package com.iohgame.services;
 
 import com.iohgame.framework.connect.base.ConnectBase;
 import com.iohgame.framework.utility.ServiceFactory;
 import com.iohgame.framework.utility.parameters.property.Action;
 import com.iohgame.framework.utility.parameters.property.OptionElement;
-import com.iohgame.service.nba.export.NbaRakutenConnect;
 import com.iohgame.service.nba.synch.NbaImpl;
-import com.iohgame.services.nba.parameters.NbaBatchOption;
+import com.iohgame.services.custom.CustomSendBirthMailAction;
+import com.iohgame.services.custom.parameters.SendBirthMailImpl;
+import com.iohgame.services.nba.NbaSynchAction;
+import com.iohgame.services.parameters.ServicePages;
 
-public class NbaFactory extends ServiceFactory
+public class DailyFactory extends ServiceFactory
 {
-    public static NbaFactory getInstance()
+    public static DailyFactory getInstance()
     {
-        return new NbaFactory();
+        return new DailyFactory();
     }
 
     @Override
@@ -20,15 +22,15 @@ public class NbaFactory extends ServiceFactory
     {
         Action act = null;
         ConnectBase connect = null;
-        switch ((NbaBatchOption) page)
+        switch ((ServicePages) page)
         {
-            case NBA_REPORT:
-                connect = new NbaRakutenConnect();
-                act = new NbaReportAction((NbaRakutenConnect) connect);
-                break;
             case NBA_SYNCHRONIZE:
                 connect = new NbaImpl();
                 act = new NbaSynchAction((NbaImpl) connect);
+                break;
+            case BIRTHDAY_PRESENT:
+                connect = new SendBirthMailImpl();
+                act = new CustomSendBirthMailAction((SendBirthMailImpl) connect);
                 break;
             default:
                 LOG.error("Batch option is not found by " + page);

@@ -40,7 +40,7 @@ public class NbaSynchAction extends BatchAction<NbaImpl>
      */
     public static final Integer GAME_SEASON = 2019;
 
-    protected NbaSynchAction(NbaImpl connect)
+    public NbaSynchAction(NbaImpl connect)
     {
         super(connect);
     }

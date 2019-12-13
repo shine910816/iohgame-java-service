@@ -9,7 +9,7 @@ import com.iohgame.service.property.jira.export.property.JiraTicketsExport;
 
 public class NbaReportAction extends BatchAction<NbaRakutenConnect>
 {
-    protected NbaReportAction(NbaRakutenConnect connect)
+    public NbaReportAction(NbaRakutenConnect connect)
     {
         super(connect);
     }

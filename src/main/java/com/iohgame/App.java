@@ -1,13 +1,36 @@
 package com.iohgame;
 
-import com.iohgame.services.nba.NbaFactory;
-import com.iohgame.services.nba.parameters.NbaBatchOption;
+import com.iohgame.framework.utility.Launcher;
+import com.iohgame.services.DailyFactory;
+import com.iohgame.services.WeeklyFactory;
+import com.iohgame.services.parameters.ServicePages;
 
-public class App 
+public class App
 {
-    public static void main( String[] args )
+    private Launcher m_daily;
+    private Launcher m_weekly;
+
+    public void run()
     {
-        //NbaFactory.getInstance().getAction(NbaBatchOption.NBA_REPORT).doMainExecute();
-        NbaFactory.getInstance().getAction(NbaBatchOption.NBA_SYNCHRONIZE).doMainExecute();
+        if (m_daily == null)
+        {
+            m_daily = new Launcher(DailyFactory.getInstance() //
+                    , ServicePages.BIRTHDAY_PRESENT //
+                    , ServicePages.NBA_SYNCHRONIZE//
+            );
+        }
+        if (m_weekly == null)
+        {
+            m_weekly = new Launcher(WeeklyFactory.getInstance() //
+                    , ServicePages.NBA_REPORT //
+            );
+        }
+        m_daily.execute();
+        m_weekly.execute();
+    }
+
+    public static void main(String[] args)
+    {
+        new App().run();
     }
 }
