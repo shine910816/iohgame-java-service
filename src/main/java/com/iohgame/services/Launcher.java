@@ -94,7 +94,7 @@ public class Launcher extends MainClass
     {
         for (ServicePages page : m_set)
         {
-            LOG.info("Action execute for " + page);
+            LOG.info("!!! Action execute for " + page + " !!!");
 
             Action act = m_factory.getAction(page);
             if (!act.doMainValidate())
