@@ -13,6 +13,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.iohgame.framework.utility.BatchAction;
 import com.iohgame.framework.utility.JsonAnalyse;
+import com.iohgame.framework.utility.Request;
 import com.iohgame.framework.utility.Utility;
 import com.iohgame.framework.utility.parameters.constant.ConstDatetime;
 import com.iohgame.framework.utility.parameters.property.Parameters;
@@ -40,9 +41,9 @@ public class NbaSynchAction extends BatchAction<NbaImpl>
      */
     public static final Integer GAME_SEASON = 2019;
 
-    public NbaSynchAction(NbaImpl connect)
+    public NbaSynchAction(NbaImpl connect, Request request)
     {
-        super(connect);
+        super(connect, request);
     }
 
     @Override

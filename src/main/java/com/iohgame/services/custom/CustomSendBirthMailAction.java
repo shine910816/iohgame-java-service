@@ -9,6 +9,7 @@ import java.util.Map.Entry;
 
 import com.iohgame.framework.utility.BatchAction;
 import com.iohgame.framework.utility.ReadFiles;
+import com.iohgame.framework.utility.Request;
 import com.iohgame.framework.utility.SendMail;
 import com.iohgame.framework.utility.Utility;
 import com.iohgame.framework.utility.parameters.constant.ConstDatetime;
@@ -21,9 +22,9 @@ public class CustomSendBirthMailAction extends BatchAction<SendBirthMailImpl>
 {
     public static final Integer PRESENT_POINT = 100;
 
-    public CustomSendBirthMailAction(SendBirthMailImpl database)
+    public CustomSendBirthMailAction(SendBirthMailImpl database, Request request)
     {
-        super(database);
+        super(database, request);
     }
 
     @Override

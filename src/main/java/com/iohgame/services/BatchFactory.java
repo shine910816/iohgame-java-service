@@ -1,6 +1,7 @@
 package com.iohgame.services;
 
 import com.iohgame.framework.connect.base.ConnectBase;
+import com.iohgame.framework.utility.Request;
 import com.iohgame.framework.utility.ServiceFactory;
 import com.iohgame.framework.utility.parameters.property.Action;
 import com.iohgame.framework.utility.parameters.property.OptionElement;
@@ -14,9 +15,14 @@ import com.iohgame.services.parameters.ServicePages;
 
 public class BatchFactory extends ServiceFactory
 {
-    public static BatchFactory getInstance()
+    public BatchFactory(Request request)
     {
-        return new BatchFactory();
+        super(request);
+    }
+
+    public static BatchFactory getInstance(Request request)
+    {
+        return new BatchFactory(request);
     }
 
     @Override
@@ -28,15 +34,15 @@ public class BatchFactory extends ServiceFactory
         {
             case NBA_SYNCHRONIZE:
                 connect = new NbaImpl();
-                act = new NbaSynchAction((NbaImpl) connect);
+                act = new NbaSynchAction((NbaImpl) connect, request());
                 break;
             case BIRTHDAY_PRESENT:
                 connect = new SendBirthMailImpl();
-                act = new CustomSendBirthMailAction((SendBirthMailImpl) connect);
+                act = new CustomSendBirthMailAction((SendBirthMailImpl) connect, request());
                 break;
             case NBA_REPORT:
                 connect = new NbaRakutenConnect();
-                act = new NbaReportAction((NbaRakutenConnect) connect);
+                act = new NbaReportAction((NbaRakutenConnect) connect, request());
                 break;
             default:
                 LOG.error("Batch option is not found by " + page);

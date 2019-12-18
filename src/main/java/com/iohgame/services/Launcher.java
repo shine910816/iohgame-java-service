@@ -8,6 +8,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 import com.iohgame.framework.utility.MainClass;
+import com.iohgame.framework.utility.Request;
 import com.iohgame.framework.utility.Utility;
 import com.iohgame.framework.utility.parameters.property.Action;
 import com.iohgame.framework.utility.parameters.property.Factory;
@@ -20,9 +21,9 @@ public class Launcher extends MainClass
     private Set<ServicePages> m_set = new TreeSet<>();
 
     @SuppressWarnings("unchecked")
-    public Launcher ready()
+    public Launcher ready(String[] args)
     {
-        m_factory = BatchFactory.getInstance();
+        m_factory = BatchFactory.getInstance(new Request(args));
         Map<String, Object> map = (Map<String, Object>) Utility.yamlAnalysis("batch");
         Map<BatchLevel, Object> transMap = new TreeMap<>();
         for (Entry<String, Object> level : map.entrySet())

@@ -1,6 +1,7 @@
 package com.iohgame.services.nba;
 
 import com.iohgame.framework.utility.BatchAction;
+import com.iohgame.framework.utility.Request;
 import com.iohgame.framework.utility.Utility;
 import com.iohgame.framework.utility.parameters.constant.ConstDatetime;
 import com.iohgame.service.nba.export.NbaRakutenConnect;
@@ -9,9 +10,9 @@ import com.iohgame.service.property.jira.export.property.JiraTicketsExport;
 
 public class NbaReportAction extends BatchAction<NbaRakutenConnect>
 {
-    public NbaReportAction(NbaRakutenConnect connect)
+    public NbaReportAction(NbaRakutenConnect connect, Request request)
     {
-        super(connect);
+        super(connect, request);
     }
 
     @Override
