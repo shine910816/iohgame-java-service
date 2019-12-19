@@ -25,7 +25,7 @@ public class BatchFactory extends ServiceFactory
         return new BatchFactory(request);
     }
 
-    @Override
+//    @Override
     public Action getAction(OptionElement page)
     {
         Action act = null;

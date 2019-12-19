@@ -11,13 +11,12 @@ import com.iohgame.framework.utility.MainClass;
 import com.iohgame.framework.utility.Request;
 import com.iohgame.framework.utility.Utility;
 import com.iohgame.framework.utility.parameters.property.Action;
-import com.iohgame.framework.utility.parameters.property.Factory;
 import com.iohgame.framework.utility.parameters.property.Parameters;
 import com.iohgame.services.parameters.ServicePages;
 
 public class Launcher extends MainClass
 {
-    private Factory m_factory;
+    private BatchFactory m_factory;
     private Set<ServicePages> m_set = new TreeSet<>();
 
     @SuppressWarnings("unchecked")
