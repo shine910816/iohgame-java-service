@@ -43,7 +43,7 @@ public class Launcher extends MainClass
                 switch (level.getKey())
                 {
                     case YEARLY:
-                        for (Entry<String, String[]> yearlyEntry : ((Map<String, String[]>) level.getValue()).entrySet())
+                        for (Entry<String, List<String>> yearlyEntry : ((Map<String, List<String>>) level.getValue()).entrySet())
                         {
                             if (yearlyEntry.getKey().equals(yearlyTarget))
                             {
@@ -55,7 +55,7 @@ public class Launcher extends MainClass
                         }
                         break;
                     case MONTHLY:
-                        for (Entry<String, String[]> monthlyEntry : ((Map<String, String[]>) level.getValue()).entrySet())
+                        for (Entry<String, List<String>> monthlyEntry : ((Map<String, List<String>>) level.getValue()).entrySet())
                         {
                             if (monthlyEntry.getKey().equals(monthlyTarget))
                             {
@@ -67,7 +67,7 @@ public class Launcher extends MainClass
                         }
                         break;
                     case WEEKLY:
-                        for (Entry<String, String[]> weeklyEntry : ((Map<String, String[]>) level.getValue()).entrySet())
+                        for (Entry<String, List<String>> weeklyEntry : ((Map<String, List<String>>) level.getValue()).entrySet())
                         {
                             if (weeklyEntry.getKey().equals(weeklyTarget))
                             {
