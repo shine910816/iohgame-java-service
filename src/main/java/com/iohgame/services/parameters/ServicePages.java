@@ -10,6 +10,8 @@ public enum ServicePages implements Parameters
 
     BIRTHDAY_PRESENT,
 
+    TEMPLATE,
+
     UNKNOWN;
 
     @Override

@@ -94,6 +94,11 @@ public class Launcher extends MainClass
     {
         for (ServicePages page : m_set)
         {
+            if (page.equals(ServicePages.TEMPLATE) || page.equals(ServicePages.UNKNOWN))
+            {
+                break;
+            }
+
             LOG.info("!!! Action execute for " + page + " !!!");
 
             Action act = m_factory.getAction(page);
