@@ -6,6 +6,8 @@ public enum ServicePages implements Parameters
 {
     NBA_REPORT,
 
+    NBA_TODO_REPORT,
+
     NBA_SYNCHRONIZE,
 
     BIRTHDAY_PRESENT,

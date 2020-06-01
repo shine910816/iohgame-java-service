@@ -11,6 +11,7 @@ import com.iohgame.services.custom.CustomSendBirthMailAction;
 import com.iohgame.services.custom.parameters.SendBirthMailImpl;
 import com.iohgame.services.nba.NbaReportAction;
 import com.iohgame.services.nba.NbaSynchAction;
+import com.iohgame.services.nba.NbaTodoReportAction;
 import com.iohgame.services.parameters.ServicePages;
 
 public class BatchFactory extends ServiceFactory
@@ -25,7 +26,6 @@ public class BatchFactory extends ServiceFactory
         return new BatchFactory(request);
     }
 
-//    @Override
     public Action getAction(OptionElement page)
     {
         Action act = null;
@@ -43,6 +43,10 @@ public class BatchFactory extends ServiceFactory
             case NBA_REPORT:
                 connect = new NbaRakutenConnect();
                 act = new NbaReportAction((NbaRakutenConnect) connect, request());
+                break;
+            case NBA_TODO_REPORT:
+                connect = new NbaRakutenConnect();
+                act = new NbaTodoReportAction((NbaRakutenConnect) connect, request());
                 break;
             default:
                 LOG.error("Batch option is not found by " + page);
