@@ -29,13 +29,6 @@ public class NbaTodoReportAction extends BatchAction<NbaRakutenConnect>
         {
             LOG.info(issue.getKey());
             LOG.info(issue.getSummary());
-            for (String desc : issue.getDescription().split("\n"))
-            {
-                if (desc.replace("\t", "").replace("\r", "") != "")
-                {
-                    LOG.info(desc);
-                }
-            }
         }
         return true;
     }
