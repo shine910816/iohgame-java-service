@@ -2,3 +2,4 @@
 /src/main/resource/server.ini
 /src/main/resource/rakutennba.ini
 *.xls
+/src/main/resource/mrss.txt
