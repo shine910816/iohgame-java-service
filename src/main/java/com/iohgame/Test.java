@@ -25,7 +25,13 @@ public class Test extends MainClass
             {
                 if (t.check(content, type))
                 {
-                    System.out.println(content.avod().title() + "\t" + content.contentType().val() + "\t" + content.url() + "\t" + content.durationTime() + "\t" + content.cuepointList());
+                    System.out.println("\n" + content.url());
+                    System.out.println(content.title());
+                    System.out.println(content.contentType().val());
+                    System.out.println(content.durationTime());
+                    System.out.println(content.cuepointList());
+                    System.out.println(content.avod().title());
+                    System.out.println(content.avod().link());
                 }
             }
         }
